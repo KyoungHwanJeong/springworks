@@ -2,8 +2,6 @@ package com.khit.web.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.khit.web.dto.BoardDTO;
 import com.khit.web.dto.PageDTO;
 import com.khit.web.dto.ReplyDTO;
-import com.khit.web.dto.UserDTO;
 import com.khit.web.service.BoardService;
 import com.khit.web.service.ReplyService;
 
@@ -49,6 +46,7 @@ public class BoardController {
 	}
 	
 	//글목록
+	// /board/
 	@GetMapping("/")
 	public String getList(Model model) {
 		List<BoardDTO> boardDTOList = boardService.findAll();
@@ -69,7 +67,7 @@ public class BoardController {
 		log.info("pagingList=" + pagingList);
 		model.addAttribute("boardList", pagingList);
 		
-		//화면 하단 구현 - 
+		//화면 하단 구현
 		PageDTO pageDTO = boardService.pagingParam(page);
 		model.addAttribute("paging", pageDTO);
 		
@@ -93,13 +91,14 @@ public class BoardController {
 		model.addAttribute("board", boardDTO);
 		model.addAttribute("page", page);
 		model.addAttribute("replyList", replyDTOList);
-		return "board/detail";	//detail.jsp
+		return "/board/detail";	//detail.jsp
 	}
 	
-	//글 수정을 위해서 게시글 가져오기
+	//글 수정 페이지 가져오기
 	@GetMapping("/update")
 	public String boardUpdate(@RequestParam("id") Long id,
 			Model model) {
+		//수정할 게시글 가져오기
 		BoardDTO boardDTO = boardService.findById(id);
 		model.addAttribute("board", boardDTO);
 		

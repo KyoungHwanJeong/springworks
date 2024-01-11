@@ -36,7 +36,7 @@ public class UserController {
 	//회원 가입 처리
 	@PostMapping("/join")
 	public String join(@ModelAttribute UserDTO userDTO){
-		log.info("userDTO=" + userDTO);
+		log.info("userDTO= " + userDTO);
 		userService.insert(userDTO);
 		
 		return "redirect:/user/login/";	//http://localhost:8080/
@@ -56,13 +56,12 @@ public class UserController {
 			Model model) {
 		UserDTO userDTO = userService.findById(id);
 		model.addAttribute("user", userDTO);
-		return "user/userdetail";
+		return "/user/userdetail";
 	}
 	
 	//로그인 페이지
 	@GetMapping("/login")
-	public String login() {
-		
+	public String loginForm() {
 		return "/user/login";
 	}
 	
@@ -76,7 +75,7 @@ public class UserController {
 
 		if(loginUser != null) {
 			session.setAttribute("sessionId", userDTO.getUserId());
-			return "redirect:/";
+			return "redirect:/";	//인덱스로 이동
 		}else {
 			return "/user/login";
 		}
@@ -89,6 +88,7 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+	// /user/update?id=
 	//회원 수정을 위해서 db 가져오기
 	@GetMapping("/update")
 	public String update(HttpSession session,
@@ -97,7 +97,6 @@ public class UserController {
 		String userId = (String)session.getAttribute("sessionId");
 		UserDTO userDTO = userService.findByUserId(userId);
 		model.addAttribute("user", userDTO);
-		
 		return "/user/userupdate";
 	}
 	
@@ -116,13 +115,13 @@ public class UserController {
 		if(session != null) {
 			session.invalidate();
 		}
-		
 		return "redirect:/user/userlist";	//강제 페이지 이동
 	}
 	
 	//아이디 중복 검사
 	@PostMapping("/checkuserid")
-	public @ResponseBody String checkUserId(@RequestParam("userId") String userId) {
+	public @ResponseBody String checkUserId(
+			@RequestParam("userId") String userId) {
 		log.info(userId);
 		String checkResult = userService.checkUserId(userId);
 		return checkResult;	//"usable" 또는  "not_usable" 리턴

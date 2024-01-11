@@ -24,7 +24,7 @@ public class HomeController {
 	}
 	
 	// "/" 경로에서 404 에러 발생
-	//
+	// @ResponseBody - json(문자) 데이터로 반환한다
 	@GetMapping("favicon.ico")
 	@ResponseBody 
 	public void returnNoFavicon() {

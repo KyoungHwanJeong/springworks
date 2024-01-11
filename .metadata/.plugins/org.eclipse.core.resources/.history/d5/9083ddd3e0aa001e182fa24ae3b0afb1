@@ -1,9 +1,0 @@
-package com.khit.web.dto;
-
-public class ReplyDTO {
-
-	private long id;
-	private Long boardId;
-	private String replyer;
-	private String replyContent;
-}
