@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+
+/* 회원가입 */
+.tbl_join{width: 300px; margin: 30px 340px; border-collapse:collapse;}
+.tbl_join td{border: 1px solid #ccc; padding: 10px;}

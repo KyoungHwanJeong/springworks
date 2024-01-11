@@ -1,0 +1,5 @@
+package org.khit.myapp.dto;
+
+public class BoardDTO {
+
+}

@@ -1,0 +1,36 @@
+package com.khit.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.khit.web.dto.BoardDTO;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RequestMapping
+@Controller
+public class BoardController {
+	
+	//글스기 페이지 요청하기
+	@GetMapping("/board/write")
+	public String write(){
+		return "/board/write";
+	}
+	
+	//글쓰기
+	@PostMapping("/write")
+	public String write(@ModelAttribute BoardDTO boardDTO) {
+		log.info("boardDTO=" + boardDTO);
+		return "redirect:/board/";	//boardlist.jsp로 이동
+	}
+	
+	//글목록
+	@GetMapping("/")
+	public String getList() {
+		
+	}
+}

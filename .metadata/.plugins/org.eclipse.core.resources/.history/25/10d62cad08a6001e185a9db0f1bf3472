@@ -1,0 +1,5 @@
+package com.khit.web.service;
+
+public interface UserService {
+
+}

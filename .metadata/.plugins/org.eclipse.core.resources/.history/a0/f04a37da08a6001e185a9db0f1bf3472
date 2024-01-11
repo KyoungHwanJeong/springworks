@@ -1,0 +1,16 @@
+package com.khit.web.service;
+
+import org.springframework.stereotype.Service;
+
+import com.khit.web.dto.UserDTO;
+
+@Service
+public class UserServiceImpl implements UserService{
+
+	
+	@Override
+	public void insert(UserDTO userDTO) {
+		
+	}
+	
+}

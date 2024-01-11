@@ -1,0 +1,8 @@
+package com.khit.web.service;
+
+import org.springframework.stereotype.Service;
+
+@Service //서비스를 구현하고 bean을 등록한다
+public class ReplyServiceImpl implements ReplyService{
+
+}

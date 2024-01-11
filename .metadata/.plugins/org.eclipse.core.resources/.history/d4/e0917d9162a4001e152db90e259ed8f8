@@ -1,0 +1,16 @@
+package org.khit.myapp.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping("/user")
+@Controller
+public class SampleController {
+	
+	//https://localhost:8080/user/join
+	//@RequestMapping("/join")
+	
+	public String joinForm() {
+		return "user/join";	//user/join.jsp
+	}
+}

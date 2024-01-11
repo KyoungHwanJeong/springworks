@@ -1,0 +1,18 @@
+package com.khit.todoweb.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class AjaxViewController {
+
+	@GetMapping("/ajax/main")
+	public String main() {
+		return "/ajax-ex/main";
+	}
+	
+	@GetMapping("/ajax/main")
+	public String ex01() {
+		return "/ajax-ex/ex01.jsp";
+	}
+}

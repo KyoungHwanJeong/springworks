@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+#content{width: 1000px; margin: 0 auto;}
+h2{color: #00f; text-align: center;}
+.main-pic{text-align: center;}
+.menu{text-align: center; margin:10px;
+border-decoration:none;}
+a{color:blue; text-decoration: none;}
+input[type="submit"], input[type="reset"]{padding: 8px;}
+
+
+/* 회원가입 */
+.tbl_join{width: 300px; margin: 30px 340px; border-collapse:collapse;}
+.tbl_join td{border: 1px solid #ccc; padding: 10px;}

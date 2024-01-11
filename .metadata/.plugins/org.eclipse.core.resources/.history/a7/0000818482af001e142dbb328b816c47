@@ -1,0 +1,8 @@
+package com.khit.members.dto;
+
+import lombok.Data;
+
+@Data
+public class MemberDTO {
+
+}

@@ -1,0 +1,5 @@
+package com.khit.members.controller;
+
+public class HomeController {
+
+}

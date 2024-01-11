@@ -1,0 +1,6 @@
+package com.khit.todoweb.mapper;
+
+public interface TodoMapper {
+
+	
+}

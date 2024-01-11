@@ -1,0 +1,10 @@
+package com.khit.members.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class HomeController {
+
+	@GetMapping("/")
+	public String
+}

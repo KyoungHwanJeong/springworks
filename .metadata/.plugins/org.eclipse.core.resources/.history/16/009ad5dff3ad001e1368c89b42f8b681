@@ -1,0 +1,24 @@
+package com.khit.todoweb.service;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+
+import com.khit.todoweb.dto.TodoDTO;
+
+@ContextConfiguration("file:src\\main\\webapp\\WEB-INF\\spring\\root-context.xml")
+public class TodoServiceTest {
+
+	@Autowired
+	private TodoService todoService;
+	@Test
+	public void testInsert() {
+		//폼에 입력된 자료로 간주해서 db에 저장(vo로 변환)
+		TodoDTO todoDTO = TodoDTO.builder()
+				.title("여행가기")
+				.writer("travel")
+				.build();
+		
+		todoService.insert(todoDTO);
+	}
+}

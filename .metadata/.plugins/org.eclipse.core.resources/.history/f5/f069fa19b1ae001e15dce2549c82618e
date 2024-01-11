@@ -1,0 +1,21 @@
+package com.khit.todoweb.dto;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+public class PageResponseDTO {	//목록 데이터 페이지 이동을 위한 DTO
+
+	private int page;
+	private int size;
+	private int total;
+	
+	//시작페이지 번호
+	private int startPage;
+	//마지막 페이지
+	private int endPage;
+	
+	//이전페이지 존재 여부
+	private boolean prev;
+}

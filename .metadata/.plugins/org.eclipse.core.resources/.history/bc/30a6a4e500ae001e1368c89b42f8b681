@@ -1,0 +1,5 @@
+package com.khit.todoweb.config;
+
+public class TodoConfig {
+
+}

@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글 상세보기</title>
+</head>
+<link rel="stylesheet" href="/resources/css/style.css">
+</head>
+<body>
+	<div id="content">
+		<h2>글 상세보기</h2>
+		<table class="tbl_detail">
+			<tr>
+				<td>${board.boardTitle}</td>
+			</tr>
+			<tr>
+				<td>${board.userId}</td>
+			</tr>
+			<tr>
+				<td>${board.content}</td>
+			</tr>
+			<tr>
+				<td>${board.hit}</td>
+			</tr>
+			<tr>
+				<td>${board.createdTime}</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/board/"><button>글목록</button></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>

@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글 상세보기</title>
+<link rel="stylesheet" href="/resources/css/style.css">
+</head>
+<body>
+	<div id="content">
+		<h2>글 상세보기</h2>
+			<table class="tbl_detail">
+				<tr>
+					<td>
+						<label>글제목</label>
+						<input type="text" name="boardTitle" placeholder="글제목" 
+							value="${board.boardTitle}" readonly>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>글쓴이</label>
+						<input type="text" name="boardWriter" placeholder="글쓴이"
+							value="${board.boardWriter}" readonly>
+					</td>
+				</tr>
+				<tr>	
+					<td>
+						<label>글내용</label>
+						<textarea rows="5" cols="50" placeholder="글내용" 
+							name="boardContent" placeholder="글내용" readonly>${board.boardContent}</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<!-- 로그인 한 사람만 수정, 삭제 버튼 보이기 -->
+						<c:if test="${board.boardWriter eq sessionId}">
+							<a href="/board/update?id=${board.id}">
+								<button>수정</button>
+							</a>
+							<a href="/board/delete?id=${board.id}" 
+								onclick="return confirm('정말로 삭제하시겠습니까?')">
+								<button>삭제</button>
+							</a>
+						</c:if>
+						<a href="/board/list"><button>글목록</button></a>
+					</td>
+				</tr>
+			</table>
+	</div>
+</body>
+</html>

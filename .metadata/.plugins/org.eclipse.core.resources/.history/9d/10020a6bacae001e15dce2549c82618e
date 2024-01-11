@@ -1,0 +1,7 @@
+package com.khit.todoweb.dto;
+
+public class PageRequestDTO {
+
+	private int page = 1;
+	
+}

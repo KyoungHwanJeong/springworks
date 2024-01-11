@@ -1,0 +1,14 @@
+package com.khit.web.dto;
+
+import java.sql.Timestamp;
+
+public class BoardDTO {
+
+	private Long id;
+	private String boardTitle;
+	private String boardWriter;
+	private String boardContent;
+	private int hit;
+	private Timestamp createTime;
+	private Timestamp updateTime;
+}

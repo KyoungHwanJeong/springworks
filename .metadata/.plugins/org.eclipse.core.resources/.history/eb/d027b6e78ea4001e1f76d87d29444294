@@ -1,0 +1,23 @@
+package org.khit.myapp.dto;
+
+import java.sql.Timestamp;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@ToString
+@Setter
+@Getter
+public class BoardDTO {
+	//필드
+	private Long id;
+	private String boardTitle;
+	private String boardWriter;
+	private String boardContent;
+	private Timestamp createdTime;
+	
+	
+}

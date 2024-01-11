@@ -1,0 +1,81 @@
+package com.khit.web.service;
+
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+import com.khit.web.dto.BoardDTO;
+import com.khit.web.dto.PageDTO;
+import com.khit.web.mapper.BoardMapper;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class BoardServiceImpl implements BoardService{
+
+	private BoardMapper boardMapper;
+	
+	int pageLimit = 5;
+	int pageStart = (page - 1) * pageLimit;
+
+	@Override
+	public void insert(BoardDTO boardDTO) {
+		boardMapper.insert(boardDTO);
+	}
+
+	@Override
+	public List<BoardDTO> findAll() {
+		return boardMapper.findAll();
+	}
+
+	@Override
+	public BoardDTO findById(Long id) {
+		return boardMapper.findById(id);
+	}
+
+	@Override
+	public void update(Long id) {
+		boardMapper.updateHit(id);
+	}
+
+	@Override
+	public void delete(Long id) {
+		boardMapper.delete(id);
+	}
+
+	@Override
+	public void update(BoardDTO boardDTO) {
+		boardMapper.update(boardDTO);
+	}
+
+	@Override
+	public List<BoardDTO> pagingList(int page) {
+		/*
+		1page 0, 2page 5, 3page 10,
+		select * from boards order by id desc limit 0, 5;
+		*/
+		
+		Map<String, Integer> pagingParam = new HashMap<>();
+		pagingParam.put("start", pageStart);
+		pagingParam.put("limit", pageLimit);
+		
+		List<BoardDTO> pagingList = boardMapper.pagingList(pagingParam);
+		return pagingList;
+	}
+
+	@Override
+	public PageDTO pagingParam(int page) {
+		//하단에 보여줄 페이지 블럭 계산하기
+		int totalRow = boardMapper.boardCount();	//전체 게시글 수
+		//전체 페이지 개수
+		totalRow/pageLimit;
+		
+		return null;
+	}
+
+
+}

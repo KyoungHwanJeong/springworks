@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 수정...</title>
+<style>
+	.content{margin-left: 30px;}
+</style>
+</head>
+<body>
+	<div class="content">
+	<form action="/update">
+		<h2>회원 수정</h2>
+			<p>
+				<label>번호</label>
+				<input type="text" name="id" value="${member.id}" readonly>
+			</p>
+			<p>
+				<label>이메일</label>
+				<input type="text" name="email" value="${member.email}" readonly>
+			</p>
+			<p>
+				<label>비밀번호</label>
+				<input type="text" name="password" value="${member.password}">
+			</p>
+			<p>
+				<label>이름</label>
+				<input type="text" name="name" value="${member.name}">
+			</p>
+			<p>
+				<label>나이</label>
+				<input type="text" name="age" value="${member.age}">
+			</p>
+			<p>
+				<label>목록</label>
+				<button type="button" value="수정" onclick="update()">수정하기</button>
+			</p>
+			</form>
+	</div>
+	
+	<script>
+	const update = function(){
+		location.href = "/member/update";
+	};
+	</script>
+</body>
+</html>

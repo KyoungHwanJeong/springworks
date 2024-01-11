@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax-study</title>
+<style>
+	.content{margin-left: 30px;}
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="content">
+		<h2>1. GET 요청하기</h2>
+		<p><button type="button" onclick="myFunction()">전송</button></p>
+	</div>
+</body>
+
+<script>
+	const myFunction = function(){
+		alert("알림");
+		
+	};
+
+</script>
+</html>

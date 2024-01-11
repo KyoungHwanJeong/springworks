@@ -1,0 +1,11 @@
+package com.khit.todoweb.dto;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+public class PageResponseDTO {	//목록 데이터 페이지 이동을 위한 DTO
+
+	private int page;
+}

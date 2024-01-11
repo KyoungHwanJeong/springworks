@@ -1,0 +1,7 @@
+package org.khit.myapp.dto;
+
+public class BoardDTO {
+
+	//필드
+	private
+}

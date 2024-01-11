@@ -1,0 +1,17 @@
+package com.khit.members.repository;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.khit.members.dto.MemberDTO;
+
+@Repository
+public class MemberRepository {
+
+	private SqlSessionTemplate sql;
+	
+	public void insert(MemberDTO memberDTO) {
+		
+	}
+
+}

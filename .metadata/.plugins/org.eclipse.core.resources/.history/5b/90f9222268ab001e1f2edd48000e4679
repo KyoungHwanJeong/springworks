@@ -1,0 +1,15 @@
+package com.khit.web.service;
+
+import org.springframework.stereotype.Service;
+
+import com.khit.web.dto.ReplyDTO;
+
+@Service //서비스를 구현하고 Bean을 등록한다
+public class ReplyServiceImpl implements ReplyService{
+
+	@Override
+	public void insert(ReplyDTO replyDTO) {
+		
+	}
+
+}

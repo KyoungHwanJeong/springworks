@@ -1,0 +1,19 @@
+package com.khit.todoweb.dto;
+
+import java.sql.Timestamp;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data	// Getter, Setter, Tostring
+public class TodoDTO {
+	//필드
+	private Long bno;
+	private String title;
+	private String writer;
+	private Timestamp createdDate;
+	
+}
