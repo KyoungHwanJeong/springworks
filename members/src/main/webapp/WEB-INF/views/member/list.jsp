@@ -9,7 +9,7 @@
 <style>
 	.content{margin-left: 30px;}
 	table{border-collapse:collapse;}
-	table th, th, td{border: 1px solid #ccc; padding: 8px;}
+	table th, td{border: 1px solid #ccc; padding: 8px;}
 </style>
 </head>
 <body>
@@ -36,7 +36,7 @@
 							<td>${member.password}</td>
 							<td>${member.name}</td>
 							<td>${member.age}</td>
-							<td><button type="button" onclick="detail('${member.id}')">조회</button></td>
+							<td><button type="button" onclick="detailFn('${member.id}')">조회</button></td>
 							<td><button type="button" onclick="deleteFn('${member.id}')">삭제</button></td>
 						</tr>							
 					</c:forEach>
@@ -46,11 +46,13 @@
 	</div>
 	
 <script>
+	//조회 처리 메서드(경로 이동)
 	//let mid= "${member.id}";
-	const detail = function(mid){
+	const detailFn = function(mid){
 		location.href = "/member?id=" + mid;
 	};
 
+	//삭제 처리 메서드(경로 이동)
 	const deleteFn = function(mid){
 	 	let sign = confirm("정말로 삭제하시겠습니까?")
 		if(sign){

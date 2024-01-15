@@ -15,14 +15,14 @@
 				<tr>
 					<td>
 						<label>글제목</label>
-						<input type="text" name="boardTitle" placeholder="글제목" 
+						<input type="text" name="boardTitle"
 							value="${board.boardTitle}" readonly>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<label>글쓴이</label>
-						<input type="text" name="boardWriter" placeholder="글쓴이"
+						<input type="text" name="boardWriter"
 							value="${board.boardWriter}" readonly>
 					</td>
 				</tr>
@@ -30,7 +30,7 @@
 					<td>
 						<label>글내용</label>
 						<textarea rows="5" cols="50" placeholder="글내용" 
-							name="boardContent" placeholder="글내용" readonly>${board.boardContent}</textarea>
+							name="boardContent" readonly>${board.boardContent}</textarea>
 					</td>
 				</tr>
 				<tr>

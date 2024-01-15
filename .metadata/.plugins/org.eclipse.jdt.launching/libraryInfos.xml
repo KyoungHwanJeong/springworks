@@ -18,6 +18,7 @@
             <entry path="C:\Java\jdk-1.8\jre\lib\endorsed"/>
         </endorsedDirs>
     </libraryInfo>
+    <libraryInfo home="C:\Program Files\Zulu\zulu-17" version="17.0.9"/>
     <libraryInfo home="C:\Java\jdk-1.8\jre" version="1.8.0_381">
         <bootpath>
             <entry path="C:\Java\jdk-1.8\jre\lib\resources.jar"/>

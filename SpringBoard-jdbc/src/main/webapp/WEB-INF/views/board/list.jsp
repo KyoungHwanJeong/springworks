@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글목록</title>
+<title>글 목록</title>
 <link rel="stylesheet" href="/resources/css/style.css">
 </head>
 <body>
@@ -17,8 +17,8 @@
 		</script>
 	</c:if>
 	<div id="content">
-		<h2>글목록</h2>
-		<div id="welcome">
+		<h2>글 목록</h2>
+		<div class="logout">
 			${sessionId}님 환영합니다. &nbsp;&nbsp;&nbsp;
 			<a href="/user/logout">로그아웃</a>
 		</div>

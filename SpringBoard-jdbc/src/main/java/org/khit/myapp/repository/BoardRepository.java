@@ -44,7 +44,6 @@ public class BoardRepository {
 		String sql = "select * from boards order by id desc";
 		try {
 			pstmt= conn.prepareStatement(sql);
-			
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				BoardDTO board = new BoardDTO();
@@ -67,7 +66,6 @@ public class BoardRepository {
 
 	public BoardDTO findById(Long id) {
 		BoardDTO board = new BoardDTO();
-		
 		conn = JDBCUtil.getConnection();
 		String sql = "select * from boards where id=?";
 		try {
@@ -80,8 +78,8 @@ public class BoardRepository {
 				board.setBoardWriter(rs.getString("boardWriter"));
 				board.setBoardContent(rs.getString("boardContent"));
 				board.setCreatedTime(rs.getTimestamp("createdTime"));
-			
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
@@ -113,7 +111,6 @@ public class BoardRepository {
 		conn = JDBCUtil.getConnection();
 		String sql = "update boards set boardtitle=?, boardcontent=? "
 					+ "where id=?";
-		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, board.getBoardTitle());

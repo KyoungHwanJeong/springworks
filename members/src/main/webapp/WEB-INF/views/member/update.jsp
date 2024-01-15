@@ -11,8 +11,8 @@
 </head>
 <body>
 	<div class="content">
-	<form action="/member/update" method="post" name="updateform">
 		<h2>회원 수정</h2>
+		<form action="/member/update" method="post" name="updateform">
 			<p>
 				<label>번호</label>
 				<input type="text" name="id" value="${member.id}" readonly>
@@ -35,20 +35,20 @@
 			</p>
 			<p>
 				<button type="button" onclick="updateFn()">수정하기</button>
-				<button type="button" onclick="back()">이전으로</button>
+				<button type="button" onclick="backFn()">이전으로</button>
 			</p>
-			</form>
+		</form>
 	</div>
 	
-	<script>
-	//수정하기 버튼
+<script>
+	//수정하기 버튼(경로 이동)
 	const updateFn = function(){
 		document.updateform.submit();
 	};
-	//이전 버튼
-	const back = function(){
-		location.href = "/member/main";
+	//이전 버튼(경로 이동)
+	const backFn = function(){
+		location.href = "/main";
 	};
-	</script>
+</script>
 </body>
 </html>

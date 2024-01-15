@@ -65,7 +65,7 @@ public class UserController {
 		return "/user/login";
 	}
 	
-	//로그인 처리
+	//로그인 처리	
 	//세션 발급
 	@PostMapping("/login")
 	public String login(@ModelAttribute UserDTO userDTO,

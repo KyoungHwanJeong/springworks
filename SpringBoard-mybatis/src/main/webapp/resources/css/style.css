@@ -68,13 +68,15 @@ table th, td{padding: 10px;}
 #boardlist{width: 700px; margin: 20px auto;}
 #boardlist table{width: 700px; margin: 20px auto;}
 #boardlist table, th, td{border: 1px solid #ccc;
-	border-collapse: collapse; text-align: center;}
-table th, td{padding: 8px;}
-table thead{background: #eee;}
-table input{width: 200px; height: 25px; padding: 3px;}
+	border-collapse: collapse; text-align: center; padding: 8px;}
+#boardlist table thead{background: #eee;}
+#boardlist table tbody td{text-align: center;}
+#boardlist table tbody td:nth-child(2){text-align: left;}
+#boardlist table input{width: 200px; height: 25px; padding: 3px;}
 #boardlist button{padding: 10px;}
 #boardlist .pagination{text-align:center;}
-.pagination .current_page{font-weight: bold; color: #boo;}
+.pagination a{margin: 5px; color: black;}
+.pagination .current_page{font-weight: bold; color: #00f;}
 
 /* 글쓰기 */
 #writeform{width: 550px; margin: 20px auto;}

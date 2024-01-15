@@ -1,7 +1,0 @@
-package com.khit.todoweb.dto;
-
-public class TodoDTO {
-	//필드
-	private Long bno;
-	
-}

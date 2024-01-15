@@ -23,8 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 @Controller	// bean 객체로 등록
 public class BoardController {
 	
-	//2. 생성자 주입 new - 자동으로 주입된다
-	//@Autowired
+	//@Autowired 2. 생성자 주입 new - 자동으로 주입된다
 	//private BoardRepository boardRepository;
 	private BoardService boardService;
 	
@@ -65,7 +64,7 @@ public class BoardController {
 	
 	//글 삭제
 	@GetMapping("/delete")
-	public String deleteBoard(@RequestParam("id") Long id) {
+	public String delete(@RequestParam("id") Long id) {
 		boardService.delete(id);
 		return "redirect:/board/list";
 	}

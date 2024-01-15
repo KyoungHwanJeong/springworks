@@ -21,8 +21,9 @@ public class UserService {
 		UserDTO loginUser = userRepository.login(userDTO);
 		if(loginUser != null) {
 			return true;
+		}else {
+			return false;
 		}
-		return false;
 	}
 
 }

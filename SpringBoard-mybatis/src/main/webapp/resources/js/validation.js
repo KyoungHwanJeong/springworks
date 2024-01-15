@@ -2,7 +2,7 @@
  * 
  */
 
-
+/* 정규표현식 */
 let checkUser = function(){
 	//alert("회원가입");
 	//아이디는 4자이상 15자까지 입력해주세요
@@ -17,9 +17,9 @@ let checkUser = function(){
 	let userAge = document.getElementById("userAge").value;
 	
 	//정규 표현식
-	let regPw1 = /[0-9]+/	//숫자
+	let regPw1 = /[0-9]+/		//숫자
 	let regPw2 = /[a-zA-Z]+/	//영문자
-	let regPw3 = /[~!@#$%^&*()_+|]+/ //특수문자
+	let regPw3 = /[~!@#$%^&*()-=\_+|]+/ //특수문자
 	let regName = /^[가-힣 ]+$/	//한글
 	
 	if(userId.length < 4 || userId.length > 15){
@@ -28,7 +28,7 @@ let checkUser = function(){
 		return false;
 	}else if(userPw.length < 8 || !regPw1.test(userPw) || !regPw2.test(userPw)
 			|| !regPw3.test(userPw)){
-		alert("비밀번호는 영문자, 숫자, 특수문자를 포함하여 8자이상 입력해주세요.");
+		alert("비밀번호는 영문자, 숫자, /n특수문자를 포함하여 8자 이상 입력해주세요.");
 		document.getElementById("userPasswd").select();
 		return false;
 	}else if(!regName.test(userName)){	//이름이 정규식에 일치하지 않으면
@@ -41,15 +41,16 @@ let checkUser = function(){
 		return false;
 	}else{
 		form.submit();	//유효라면 폼에 전송한다	
-	}//checkUser 닫기
+	}
 	
-}
+}//checkUser 닫기
 
 // ID 중복검사 순서
 /*
 	1. 아이디 입력값 가져오기
 	2. 입력 값을 서버에 전송하고 중복된 아이디가 있는지 확인
 */
+/* 아이디 중복 검사 */
 let checkId = function(){
 	//alert("중복검사");
 	let userId = document.getElementById("userId").value;

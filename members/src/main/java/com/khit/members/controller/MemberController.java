@@ -45,7 +45,7 @@ public class MemberController {
 	
 	//로그인 폼
 	@GetMapping("/login")
-	public String loginform() {
+	public String loginForm() {
 		
 		return "/member/login";
 	}
@@ -55,7 +55,7 @@ public class MemberController {
 	public String login(@ModelAttribute MemberDTO memberDTO, 
 			HttpSession session) {
 		MemberDTO loginMember = memberService.login(memberDTO);
-		if(loginMember != null) {	//로그인된 객체가 있으면 세션 발급
+		if(loginMember != null) {	//로그인된 객체가 있으면 세션을 발급한다
 			session.setAttribute("sessionEmail", memberDTO.getEmail());
 			return "main";
 		}else {
@@ -66,7 +66,7 @@ public class MemberController {
 	//로그아웃
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
-		session.invalidate();	//모든 세션 삭제
+		session.invalidate();	//모든 세션을 삭제
 		return "redirect:/";
 	}
 	
@@ -75,7 +75,6 @@ public class MemberController {
 	public String getMemberList(Model model) {
 		List<MemberDTO> memberDTOList = memberService.findAll();
 		model.addAttribute("memberList", memberDTOList);
-
 		return "/member/list";
 	}
 	
@@ -85,7 +84,6 @@ public class MemberController {
 			Model model) {
 		MemberDTO memberDTO = memberService.findById(id);
 		model.addAttribute("member", memberDTO);
-		
 		return "/member/detail";
 	}
 	
@@ -95,7 +93,6 @@ public class MemberController {
 			HttpSession session) {
 		memberService.delete(id);
 		session.invalidate();
-		
 		return "redirect:/member/";
 	}
 	
@@ -108,19 +105,20 @@ public class MemberController {
 		String email = (String)session.getAttribute("sessionEmail");
 		MemberDTO memberDTO = memberService.findByEmail(email);
 		model.addAttribute("member", memberDTO);
-		
 		return "/member/update";	//update.jsp
 	}
 	
 	//회원 수정하기
 	@PostMapping("/update")
 	public String update(@ModelAttribute MemberDTO memberDTO) {
-		memberService.update(memberDTO);		
+		memberService.update(memberDTO);
 		
 		return "redirect:/member?id=" + memberDTO.getId();
 	}
 	
-	//이메일 중복검사
+	//이메일 중복 검사
+	//@ResponseBody = @ResponseBody를 사용하면 
+	// Spring은 반환 값을 HTTP 응답으로 직접 사용하게 됩니다.
 	@PostMapping("/checkemail")
 	public @ResponseBody String checkEmail(
 			@RequestParam("email") String email) {

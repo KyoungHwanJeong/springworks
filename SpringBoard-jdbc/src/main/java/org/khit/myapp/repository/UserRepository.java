@@ -16,7 +16,6 @@ public class UserRepository {
 	ResultSet rs = null;
 	
 	public void save(UserDTO user) {
-	
 		conn = JDBCUtil.getConnection();
 		String sql = "insert into users(userid, userpasswd, username, userage) "
 				+"values(?, ?, ?, ?)";
