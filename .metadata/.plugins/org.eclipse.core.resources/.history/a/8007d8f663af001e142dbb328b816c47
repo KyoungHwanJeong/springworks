@@ -1,7 +1,0 @@
-package com.khit.todoweb.dto;
-
-public class AjaxDTO {
-
-	private id;
-	
-}

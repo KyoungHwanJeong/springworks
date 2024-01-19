@@ -35,7 +35,7 @@
 		</form>
 	</div>
 	
-	<script>
+<script>
 	//이메일 입력값을 가져오고, 
 	//ajax()로 입력값을 서버(컨트롤러)로 전송
 	//이메일이 체크된 후 사용 가능 여부를 입력 상자 아래에 표시한다
@@ -44,7 +44,6 @@
 		let checkResult = document.getElementById("check-result");
 		console.log("이메일: ", email);
 		
-		//
 		$.ajax({
 			//요청방식, url, data, 함수 - (성공, 실패)
 			type: "POST",
@@ -54,10 +53,10 @@
 			},
 			success: function(res){
 				console.log("성공: ", res);
-				if(res=="OK"){
+				if(res == "OK"){
 					checkResult.innerHTML = "사용가능한 이메일입니다.";
 					checkResult.style.color = "green";
-				}else{	//res = "NO"
+				}else{	//res == "NO"
 					checkResult.innerHTML = "이미 가입된 이메일입니다.";
 					checkResult.style.color = "red";
 				}
@@ -89,6 +88,6 @@
 		})
 	};
 	
-	</script>
+</script>
 </body>
 </html>

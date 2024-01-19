@@ -105,7 +105,7 @@ public class BoardController {
 		return "/board/boardupdate";
 	}
 	
-	//글 수정
+	//글 수정 처리하기
 	@PostMapping("/update")
 	public String update(@ModelAttribute BoardDTO boardDTO) {
 		//수정해서 다시 저장함(객체[DTO]로 저장)

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="jwspring2"/>
+<aop-project name="01_Test"/>
 <aop-project name="todoweb"/>
+<aop-project name="BoardWeb2"/>
+<aop-project name="BoardWeb3"/>
 <aop-project name="SpringBoard-mybatis"/>
+<aop-project name="BoardWeb"/>
 <aop-project name="members"/>
 <aop-project name="SpringBoard-jdbc"/>
 </aop-reference-model>

@@ -1,5 +1,0 @@
-package com.khit.todoweb.dto;
-
-public class PageResponseDTO {
-
-}

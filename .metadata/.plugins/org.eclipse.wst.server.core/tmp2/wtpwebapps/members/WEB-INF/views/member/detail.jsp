@@ -34,14 +34,15 @@
 			</p>
 			<p>
 				<label>목록</label>
-				<button type="button" value="목록" onclick="list()">목록</button>
+				<button type="button" onclick="list()">목록</button>
 			</p>
 	</div>
 	
-	<script>
+<script>
+	//목록 보기 버튼
 	const list = function(){
 		location.href = "/member/";
 	};
-	</script>
+</script>
 </body>
 </html>
